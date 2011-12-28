@@ -5,10 +5,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
     version="1.2">
+    <managed-bean>
+	   <managed-bean-name>clienteRepository</managed-bean-name>
+	   <managed-bean-class>com.pruebas.model.ClienteRepository</managed-bean-class>
+	   <managed-bean-scope>application</managed-bean-scope>
+	</managed-bean>   
 	<managed-bean>
-		<managed-bean-name>convertidorTemperatura</managed-bean-name>
-		<managed-bean-class>com.pruebas.ConvertidorTemperatura</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+	   <managed-bean-name>clienteController</managed-bean-name>
+	   <managed-bean-class>com.pruebas.controller.ClienteController</managed-bean-class>
+	   <managed-bean-scope>request</managed-bean-scope>
+	   <managed-property>
+	      <property-name>clienteRepository</property-name>
+	      <property-class>com.pruebas.model.ClienteRepository</property-class>
+	      <value>#{clienteRepository}</value>
+	   </managed-property>
 	</managed-bean>
-
 </faces-config>

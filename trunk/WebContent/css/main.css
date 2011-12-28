@@ -1,0 +1,65 @@
+.oddRow {
+	background-color: #aaf;
+}
+
+.evenRow {
+	background-color: #FFF;
+}
+
+.centered {
+	text-align: center;
+	width: 10%;
+}
+
+.normal {
+	text-align: left;
+}
+
+.form {
+	border: solid #000 1px;
+	width: 400px;
+}
+
+.clienteTable {
+	border: solid #00F 1px;
+	width: 500px;
+	border-collapse:collapse;
+}
+
+.headerTable {
+	border: solid #000 1px;
+}
+
+.errorClass {
+	color: red;
+		
+}
+
+.infoClass {
+	color: blue;
+}
+
+.labelClass {
+	color: black;
+}
+body{
+	font-family: Verdana;
+	font-size: small;
+}
+
+
+.icono{
+	width:30px;
+	height:25px;
+	background-repeat: no-repeat;
+	display: block;
+	float:left;
+	cursor:pointer}
+
+.eliminar{
+	background-image: url('img/delete.png');
+}
+
+.editar{
+	background-image: url('img/pencil.png');
+}
