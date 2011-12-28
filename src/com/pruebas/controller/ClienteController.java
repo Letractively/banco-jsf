@@ -25,7 +25,7 @@ public class ClienteController {
     public String addNew() {
         form.setRendered(true);
         addNewCommand.setRendered(false);
-        persistCommand.setValue("Add");
+        persistCommand.setValue("Agregar");
         return null;
     }
 
@@ -33,16 +33,16 @@ public class ClienteController {
         form.setRendered(false);
         addNewCommand.setRendered(true);
         if (clienteRepository.persist(cliente) == null) {
-            addStatusMessage("Added " + cliente);
+            addStatusMessage("Cliente guardado.");
         } else {
-            addStatusMessage("Updated " + cliente);
+            addStatusMessage("Cliente actualizado.");
         }
         return null;
     }
 
     public String remove() {
         clienteRepository.remove(clienteSeleccionado);
-        addStatusMessage("Removed " + clienteSeleccionado);
+        addStatusMessage("Cliente eliminado.");
         return null;
     }
 
@@ -50,8 +50,7 @@ public class ClienteController {
         cliente = clienteSeleccionado;
         form.setRendered(true);
         addNewCommand.setRendered(false);
-        addStatusMessage("Read " + cliente);
-        persistCommand.setValue("Update");
+        persistCommand.setValue("Actualizar");
         return null;
     }
 

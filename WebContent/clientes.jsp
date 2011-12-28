@@ -30,15 +30,17 @@
 			<h:inputHidden value="#{clienteController.cliente.id}" />
 			<h:panelGrid columns="6">
 				<%-- First Name --%>
-				<h:outputLabel value="First Name" for="firstName" accesskey="f" />
-				<h:inputText id="firstName" label="First Name" required="true"
+				<h:outputLabel value="Nombre" for="firstName" accesskey="f" />
+				<h:inputText id="firstName" label="Nombre" required="true"
 					value="#{clienteController.cliente.firstName}" size="10" />
 				<h:message for="firstName" errorClass="errorClass" />
 
 				<%-- Last Name --%>
-				<h:outputLabel value="Last Name" for="lastName" accesskey="l" />
+				<h:outputLabel value="Apellido" for="lastName" accesskey="l" />
 				<h:inputText id="lastName" required="true"
-					value="#{clienteController.cliente.lastName}" size="15" />
+					value="#{clienteController.cliente.lastName}" size="15">
+					<f:validateLength minimum="5" maximum="10"/>
+				</h:inputText>
 				<h:message for="lastName" errorClass="errorClass" />
 			</h:panelGrid>
 			<h:panelGroup>
@@ -69,11 +71,11 @@
 					<h:panelGrid columns="2" styleClass="centered">
 						<h:commandLink styleClass="icono eliminar" title="Eliminar" action="#{clienteController.remove}">
 							<f:setPropertyActionListener
-								target="#{clienteController.selectedcliente}" value="#{cliente}" />
+								target="#{clienteController.selectedCliente}" value="#{cliente}" />
 						</h:commandLink>
 						<h:commandLink  styleClass="icono editar" value="" title="Editar" action="#{clienteController.read}">
 							<f:setPropertyActionListener
-								target="#{clienteController.selectedcliente}" value="#{cliente}" />
+								target="#{clienteController.selectedCliente}" value="#{cliente}" />
 						</h:commandLink>
 					</h:panelGrid>
 				</h:column>
